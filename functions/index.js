@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import ExcelJS from "exceljs";
 import admin from "firebase-admin";
+import { getFirestore } from "firebase-admin/firestore";
 import { onRequest } from "firebase-functions/v2/https";
 import { setGlobalOptions } from "firebase-functions/v2";
 
@@ -23,7 +24,8 @@ if (!admin.apps.length) {
 
 setGlobalOptions({ region: "us-central1", maxInstances: 5 });
 
-const db = admin.firestore();
+const db = getFirestore();
+db.settings({ preferRest: true });
 const app = express();
 
 app.use(cors({ origin: true }));
@@ -609,7 +611,7 @@ async function buildParticipantReportByRoll(test, rollNumber) {
 }
 
 app.use(async (req, res, next) => {
-  if (req.path === "/api/health") {
+  if (req.path === "/api/health" || req.path === "/health" || String(req.path || "").endsWith("/health")) {
     return next();
   }
   await ensureAlwaysOnTestSafe();
