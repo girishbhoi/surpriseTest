@@ -13,7 +13,8 @@ if (!admin.apps.length) {
       parsed.private_key = String(parsed.private_key).replace(/\\n/g, "\n");
     }
     admin.initializeApp({
-      credential: admin.credential.cert(parsed)
+      credential: admin.credential.cert(parsed),
+      projectId: parsed.project_id || process.env.GOOGLE_CLOUD_PROJECT || "suprisetest-95009"
     });
   } else {
     admin.initializeApp();
@@ -608,6 +609,9 @@ async function buildParticipantReportByRoll(test, rollNumber) {
 }
 
 app.use(async (req, res, next) => {
+  if (req.path === "/api/health") {
+    return next();
+  }
   await ensureAlwaysOnTestSafe();
   return next();
 });
