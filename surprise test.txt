@@ -1,0 +1,18 @@
+firstly I want it to be completely free 
+not a large scale app
+one teacher and about 60 80 student
+excel based input output 
+no login required 
+when opened the website 
+2 options 
+join a test, create a test 
+when joining a test will prompt for test code
+while creating a test will ask for questions 
+2 types of input here UI based adding questions one by one other being excel based
+various options such as randomize sequence, random papers from a question bank, allow to go back to a question or not, time limit, etc 
+after test is created it can be started by teacher at a set time 
+teacher will get a unique test code 
+which can be shared with the students 
+students will be at waiting screen till the test time starts, they can enter their roll number till then 
+test will auto submit once time is up 
+Live dashboard, auto check according to the answer sheet, robust structure and implimentation

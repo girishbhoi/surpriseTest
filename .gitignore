@@ -1,0 +1,11 @@
+node_modules/
+server/node_modules/
+client/node_modules/
+functions/node_modules/
+client/dist/
+.vercel/
+.firebase/
+firebase-debug.log
+firebase-debug.*.log
+server/data/app.db
+.DS_Store

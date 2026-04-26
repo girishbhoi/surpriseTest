@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "suprisetest-95009"
+  },
+  "targets": {
+    "suprisetest-95009": {
+      "hosting": {
+        "main": [
+          "suprise-test"
+        ]
+      }
+    }
+  }
+}

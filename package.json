@@ -1,0 +1,7 @@
+{
+  "name": "surprise-test-workspace",
+  "private": true,
+  "scripts": {
+    "local:firebase": "node scripts/local-firebase.mjs"
+  }
+}
